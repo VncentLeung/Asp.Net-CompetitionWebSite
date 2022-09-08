@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="WebCompetion" Class="WebCompetitionDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\00_MyFiles\001_My_Codes\006_C#_Codes\Web\WebCompetitionA\WebCompetition.Web\App_Data\WebCompetion.mdf;Integrated Security=True" SettingsObjectName="WebCompetition.DAL.Properties.Settings" SettingsPropertyName="WebCompetionConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.eroll" Member="eroll">
+    <Type Name="eroll">
+      <Column Name="sid" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="rid" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="rname" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="estatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="esubmit" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="eawards" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="esubmitfile" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="student_eroll" Member="student" ThisKey="sid" OtherKey="sid" Type="student" IsForeignKey="true" />
+      <Association Name="race_eroll" Member="race" ThisKey="rid" OtherKey="rid" Type="race" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.student" Member="student">
+    <Type Name="student">
+      <Column Name="sid" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="sname" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="snickname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ssex" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="semail" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="sphone" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="spassword" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Association Name="student_eroll" Member="eroll" ThisKey="sid" OtherKey="sid" Type="eroll" />
+    </Type>
+  </Table>
+  <Table Name="dbo.manager" Member="manager">
+    <Type Name="manager">
+      <Column Name="mid" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="mnickname" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="mmail" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="mpassword" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.news" Member="news">
+    <Type Name="news">
+      <Column Name="ntitle" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ncontent" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="ntime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="nid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.race" Member="race">
+    <Type Name="race">
+      <Column Name="rid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="rname" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ryear" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="rstartdate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="renddate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="rcontent" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="rrequire" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="rsubmit" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="race_eroll" Member="eroll" ThisKey="rid" OtherKey="rid" Type="eroll" />
+    </Type>
+  </Table>
+</Database>

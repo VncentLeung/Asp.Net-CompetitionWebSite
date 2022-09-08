@@ -1,0 +1,75 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage2.master.cs" Inherits="MasterPage2" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>首页</title>
+
+    <link href="Styles/MyStyle.css" type="text/css" />
+    <style type="text/css">
+         ul{
+            font-size:larger;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;text-decoration:none; list-style:none
+        }
+        li{
+            height:50px;
+        }
+    </style>
+</head>
+<body>
+  
+        
+    <form id="form1" runat="server">
+        <header >
+            <asp:Image ID="imgLogo" runat="server" ImageUrl="~/Images/image_489.png" />
+        
+        </header>
+        <asp:Label ID="Label1" runat="server" Text="未登录"></asp:Label>
+        <asp:LinkButton  ID="AlertLogin" runat="server" CausesValidation="False" Visible="True" PostBackUrl="~/ManagerLogin.aspx"></asp:LinkButton>
+
+        <section>
+             <div style="height: 100%; background-color: white; display: flex">
+                <div style="height:450px; width:20%; background-color:#2e2e54;">
+                 <ul >
+                     <li >
+                     <asp:LinkButton ID="lnkbtnRcM"  style="color:white;text-decoration:none;"  runat="server" CausesValidation="False" Visible="True" PostBackUrl="~/RaceManage.aspx">赛事管理</asp:LinkButton>
+                     </li>
+                     <li>
+                       <asp:LinkButton ID="lnkbtnAwM"  style="color:white;text-decoration:none;"  runat="server" CausesValidation="False" Visible="True" PostBackUrl="~/AwardsManage.aspx">奖项设置</asp:LinkButton>
+                     </li>
+                     <li>
+                         <asp:LinkButton ID="lnkbtnNwM"  style="color:white;text-decoration:none;" runat="server" CausesValidation="False" Visible="True" PostBackUrl="~/NewsManage.aspx">新闻管理</asp:LinkButton>
+                     </li>
+                 </ul>
+                </div>
+                <div>
+                     <asp:ContentPlaceHolder Visible="false" ID="RaceManage" runat="server" />
+                    <asp:ContentPlaceHolder Visible="false" ID="RaceDetailManage" runat="server" />
+                    <asp:ContentPlaceHolder Visible="false" ID="AwardsManage" runat="server" />
+                     <asp:ContentPlaceHolder Visible="false" ID="AwardsDetailManage" runat="server" />
+                    <asp:ContentPlaceHolder Visible="false" ID="NewsManage" runat="server" />
+                    <asp:ContentPlaceHolder Visible="false" ID="NewsDetailManage" runat="server" />
+
+              <%--      <asp:ContentPlaceHolder Visible="false" ID="RegisterContent" runat="server" />
+                    <asp:ContentPlaceHolder Visible="false" ID="LoginContent" runat="server" />
+                    <asp:ContentPlaceHolder Visible="false" ID="ChangePwdContent" runat="server" />
+                    <asp:ContentPlaceHolder Visible="false" ID="GetPwdContent" runat="server" />
+                    <asp:ContentPlaceHolder Visible="false" ID="ShopCartContent" runat="server" />
+                    <asp:ContentPlaceHolder Visible="false" ID="DefaultAdminContent" runat="server" />
+                    <asp:ContentPlaceHolder Visible="false" ID="WebSiteContent" runat="server" />
+         --%>       </div>
+            </div>
+        </section>
+
+                <footer>
+            <div style="width: 100%; margin: 0; text-align: center">
+                <div style="border: solid 2px white; height: 25px; width: 100%; margin: 2px auto; color: #fff; background-color: #2e2e54; text-align: left; vertical-align: middle">
+                    Copyright 2022 CompetitionWeb
+                </div>
+            </div>
+        </footer>
+    </form>
+</body>
+</html>
+

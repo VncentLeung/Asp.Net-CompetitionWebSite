@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="WebCompetition">
+  <DataContextMoniker Name="/WebCompetitionDataContext" />
+  <nestedChildShapes>
+    <classShape Id="69c8f2f7-cf8c-406c-bf3f-288f90cb6aca" absoluteBounds="3.5, 0.875, 2, 2.0916874186197916">
+      <DataClassMoniker Name="/WebCompetitionDataContext/eroll" />
+      <nestedChildShapes>
+        <elementListCompartment Id="25e99b9f-ca3c-40db-86aa-a0d048607c57" absoluteBounds="3.515, 1.335, 1.9700000000000002, 1.5316874186197915" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="928e769b-79b4-4685-ac36-9152f31901a6" absoluteBounds="0.75, 0.875, 2, 2.0916874186197916">
+      <DataClassMoniker Name="/WebCompetitionDataContext/student" />
+      <nestedChildShapes>
+        <elementListCompartment Id="52da7bd5-75ea-42ea-92c8-cba57f968cc4" absoluteBounds="0.765, 1.335, 1.9700000000000002, 1.5316874186197915" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ffcc3477-bd10-44b1-be55-282f20c640a3" absoluteBounds="3.75, 4.75, 2, 1.5373050944010416">
+      <DataClassMoniker Name="/WebCompetitionDataContext/manager" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c9135628-080b-4f71-b7fc-27f099526477" absoluteBounds="3.765, 5.21, 1.9700000000000002, 0.97730509440104174" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="364d17e5-fd52-436e-92b0-1963b1dcae9b" absoluteBounds="6.75, 0.75, 2, 1.5373050944010416">
+      <DataClassMoniker Name="/WebCompetitionDataContext/news" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e3cd0de8-ad3f-4bc1-a35b-dfdbab021584" absoluteBounds="6.765, 1.21, 1.9700000000000002, 0.97730509440104174" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="54f827b8-3194-491b-a892-9e4bc4c93a56" absoluteBounds="0.75, 3.875, 2, 2.276481526692709">
+      <DataClassMoniker Name="/WebCompetitionDataContext/race" />
+      <nestedChildShapes>
+        <elementListCompartment Id="165f383c-374c-4546-b424-39234f37dc43" absoluteBounds="0.765, 4.335, 1.9700000000000002, 1.7164815266927085" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 1.9208437093099); (3.5 : 1.9208437093099)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/WebCompetitionDataContext/student/student_eroll" />
+      <nodes>
+        <classShapeMoniker Id="928e769b-79b4-4685-ac36-9152f31901a6" />
+        <classShapeMoniker Id="69c8f2f7-cf8c-406c-bf3f-288f90cb6aca" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.28125); (3.59375 : 4.28125); (3.59375 : 2.96668741861979)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/WebCompetitionDataContext/race/race_eroll" />
+      <nodes>
+        <classShapeMoniker Id="54f827b8-3194-491b-a892-9e4bc4c93a56" />
+        <classShapeMoniker Id="69c8f2f7-cf8c-406c-bf3f-288f90cb6aca" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
